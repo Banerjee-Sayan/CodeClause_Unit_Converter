@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="row">
+           <p class="logo">Convertex</p>
+          <ul class="main-navbar">
+            <li><a href="#delivery">Features</a></li>
+            <li><a href="#feature">About Us</a></li>  
+            <li><a href="#cities">Contact</a></li>
+            <li><a href="#plans">Sign -up</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      
+      <div class="hero-text-box">
+        <div class="timeflexbox">
+          <h1>"Streamline Your Conversions with our  Ultimate  Unit Converter:  <br>  Simplify Complex Measurements in a Snap!"</h1>
+          <!-- <p id="time_span"></p> -->
+        </div>
+       </div>
+
+      <div class="parent-container">
+        <div class="input-container">
+
+          <span class="input">
+            <p class="flexbox_paragraph"> You Entered</p>
+            <input id="unitinput" type="text" placeholder="Enter Unit">
+
+            <span></span>
+          </span>
+        </div>
+
+        
+        <div class="dropdown">
+       
+          
+            <select id="convertfrom">
+              
+              <option>Kilometer</option>
+              <option>Metre</option>
+              <option>Millimeter</option>
+              <option>Micrometer</option>
+              <option>Nanometer</option>
+              <option>Mile</option>
+              <option>Yard</option>
+              <option>Foot</option>
+              <option>Inch</option>
+            </select>
+        </div>
+        <div class="dropdown">
+            
+            <select id="convertto">
+              <option>Metre</option>
+              <option>Kilometer</option>
+              <option>Millimeter</option>
+              <option>Micrometer</option>
+              <option>Nanometer</option>
+              <option>Mile</option>
+              <option>Yard</option>
+              <option>Foot</option>
+              <option>Inch</option>
+            </select>
+        </div>
+      <div class="result-container">
+
+        <div>
+          
+          <p class="flexbox_paragraph">You Got</p>
+        </div>
+        <div id="result">
+          <p>Result</p>
+          <span></span>
+        </div>
+      </div>  
+        
+        <div class="submit-container">
+          <button id="button1" onclick="compute()">Submit</button>
+        </div>
+      </div>
+      
+    </header>
+
+    <div>
+      
+      <div class="socialmedia">
+            <p>Connect us on</p>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/sayan-banerjee-4a1730248" target="_blank"><i class="fa fa-linkedin" style="color: rgb(237, 209, 182)"></i></a></li>
+              <li><a href="https://www.instagram.com/sayxn12/" target="_blank"><i class="fa fa-instagram" style="color: rgb(237, 209, 182)"></i></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100030548717403" target="_blank"><i class="fa fa-facebook-f" style="color: rgb(237, 209, 182)"></i></a></li>
+              <li><a href="https://github.com/Banerjee-Sayan" target="_blank"><i class="fa fa-github" style="color: rgb(237, 209, 182)"></i></a></li>
+            </ul>
+            
+          
+         </div>
+    </div>
+    <footer>
+      <div class="row">
+        <p>Copyright &copy; 2015 By Convertex. All Rights Reserved</p>
+    </div>
+    </footer>
+    <script>
+      function compute() {
+        var x = document.getElementById("unitinput").value;
+
+        let convertfrom1 = document.getElementById("convertfrom").value;
+        let convertto2 = document.getElementById("convertto").value;
+
+        var result = document.getElementById("result").value;
+
+        //    From meter conversion
+
+        if (convertfrom1 == "Metre" && convertto2 == "Kilometer") {
+          result1 = x / 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Centimeter") {
+          var result1 = x * 100;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Millimeter") {
+          result1 = x * 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Micrometer") {
+          result1 = x * 1000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Nanometer") {
+          result1 = x * 1000000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Mile") {
+          result1 = x / 1609;
+          Math.round(result1);
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Yard") {
+          result1 = x * 1.094;
+
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Foot") {
+          result1 = x * 3.28;
+
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Metre" && convertto2 == "Inch") {
+          result1 = x * 39.37;
+
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        //   from kilometer conversion
+
+        if (convertfrom1 == "Kilometer" && convertto2 == "Metre") {
+          result1 = x * 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Kilometer" && convertto2 == "Millimeter") {
+          result1 = x * 1000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Kilometer" && convertto2 == "Micrometer") {
+          result1 = x * 1000000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Kilometer" && convertto2 == "Nanometer") {
+          result1 = x * 1000000000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Kilometer" && convertto2 == "Mile") {
+          result1 = x * 1.609;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Kilometer" && convertto2 == "Yard") {
+          result1 = x * 1094;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Kilometer" && convertto2 == "Foot") {
+          result1 = x * 3281;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Kilometer" && convertto2 == "Inch") {
+          result1 = x * 39270;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        //   from millimeter convertion
+        if (convertfrom1 == "Millimeter" && convertto2 == "Metre") {
+          result1 = x / 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Millimeter" && convertto2 == "Kilometer") {
+          result1 = x / 1000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Millimeter" && convertto2 == "Micrometer") {
+          result1 = x * 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Millimeter" && convertto2 == "Nanometer") {
+          result1 = x * 1000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Millimeter" && convertto2 == "Mile") {
+          result1 = x / 1609;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Millimeter" && convertto2 == "Yard") {
+          result1 = x / 914.4;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Millimeter" && convertto2 == "Foot") {
+          result1 = x / 304.8;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Millimeter" && convertto2 == "Inch") {
+          result1 = x / 25.4;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        // micrometer conversion
+        if (convertfrom1 == "Micrometer" && convertto2 == "Metre") {
+          result1 = x / 1000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Micrometer" && convertto2 == "Kilometer") {
+          result1 = x / 1000000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Micrometer" && convertto2 == "Millimeter") {
+          result1 = x / 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Micrometer" && convertto2 == "Nanometer") {
+          result1 = x * 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Micrometer" && convertto2 == "Nanometer") {
+          result1 = x / 1.609;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Micrometer" && convertto2 == "Yard") {
+          result1 = x / 914400;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Micrometer" && convertto2 == "Foot") {
+          result1 = x / 304800;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Micrometer" && convertto2 == "Inch") {
+          result1 = x / 25400;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        // Nanometer conversion
+        if (convertfrom1 == "Nanometer" && convertto2 == "Metre") {
+          result1 = x / 1000000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Nanometer" && convertto2 == "Kilometer") {
+          result1 = x / 1000000000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Nanometer" && convertto2 == "Millimetre") {
+          result1 = x / 1000000;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Nanometer" && convertto2 == "Micrometre") {
+          result1 = x / 1000;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Nanometer" && convertto2 == "Mile") {
+          result1 = x / (1.609 * 1000000000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Nanometer" && convertto2 == "Yard") {
+          result1 = x / (9.144 * 100000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Nanometer" && convertto2 == "Foot") {
+          result1 = x / (3.048 * 100000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Nanometer" && convertto2 == "Inch") {
+          result1 = x / (2.54 * 10000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        // mile conversion
+
+        if (convertfrom1 == "Mile" && convertto2 == "Metre") {
+          result1 = x * 1609;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Kilometer") {
+          result1 = x * 1.609;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Millimeter") {
+          result1 = x * (1.609 * 1000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Micrometer") {
+          result1 = x * (1.609 * 1000000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Nanometer") {
+          result1 = x * (1.609 * 1000000000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Micrometer") {
+          result1 = x * (1.609 * 1000000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Yard") {
+          result1 = x / 914.4;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Foot") {
+          result1 = x / 304.8;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Mile" && convertto2 == "Inch") {
+          result1 = x / 25.4;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        // yard conversion
+        if (convertfrom1 == "Yard" && convertto2 == "Metre") {
+          result1 = x / 1.094;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Yard" && convertto2 == "Kilometer") {
+          result1 = x / 1094;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Yard" && convertto2 == "Millimeter") {
+          result1 = x / 914.4;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Yard" && convertto2 == "Micrometer") {
+          result1 = x / 914400;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Yard" && convertto2 == "Nanometer") {
+          result1 = x / (9.144 * 100000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Yard" && convertto2 == "Mile") {
+          result1 = x / 1760;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        if (convertfrom1 == "Yard" && convertto2 == "Foot") {
+          result1 = x / 3;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Yard" && convertto2 == "Inch") {
+          result1 = x / 36;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        // foot conversion
+        if (convertfrom1 == "Foot" && convertto2 == "Metre") {
+          result1 = x / 3.281;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Foot" && convertto2 == "Kilometer") {
+          result1 = x / 3281;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Foot" && convertto2 == "Millimeter") {
+          result1 = x / 304.8;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Foot" && convertto2 == "Micrometer") {
+          result1 = x / 304800;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Foot" && convertto2 == "Nanometer") {
+          result1 = x / (3.048 * 100000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Foot" && convertto2 == "Mile") {
+          result1 = x / 5280;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Foot" && convertto2 == "Yard") {
+          result1 = x / 3;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Foot" && convertto2 == "Inch") {
+          result1 = x / 12;
+          document.getElementById("result").innerHTML = result1;
+        }
+
+        // Inch conversion
+
+        if (convertfrom1 == "Inch" && convertto2 == "Metre") {
+          result1 = x / 39.37;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Inch" && convertto2 == "Kilometer") {
+          result1 = x / 39370;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Inch" && convertto2 == "Millimetee") {
+          result1 = x / 25.4;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Inch" && convertto2 == "Micrometer") {
+          result1 = x / 25400;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Inch" && convertto2 == "Nanometer") {
+          result1 = x / (2.54 * 10000000);
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Inch" && convertto2 == "Mile") {
+          result1 = x / 63360;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Inch" && convertto2 == "Yard") {
+          result1 = x / 36;
+          document.getElementById("result").innerHTML = result1;
+        }
+        if (convertfrom1 == "Inch" && convertto2 == "Foot") {
+          result1 = x / 12;
+          document.getElementById("result").innerHTML = result1;
+        }
+      }
+
+
+      timer();
+
+function timer(){
+ var now = new Date,
+     hours = now.getHours(),
+     ampm  = hours<=11 ? ' AM' : ' PM'
+     minutes = now.getMinutes(),
+     seconds = now.getSeconds(),
+     t_str = [hours-12,
+              (minutes < 10 ? "0" + minutes : minutes),
+              (seconds < 10 ? "0" + seconds : seconds)]
+                 .join(':') + ampm;
+ document.getElementById('time_span').innerHTML = t_str;
+ setTimeout(timer,1000);
+}
+
+     
+
+    </script>
+  </body>
+</html>
